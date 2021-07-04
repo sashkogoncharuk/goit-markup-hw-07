@@ -106,16 +106,12 @@
   top: 50%;
   left: 12px;
   transform: translate(0%, -50%);
-}
 
-.modal__input {
-  &:focus {
-    .modal__icon {
-      fill: $accent-color;
-      border-color: $accent-color;
-      transition-duration: 250ms;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
+  .modal__input:focus + & {
+    fill: $accent-color;
+    border-color: $accent-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -142,6 +138,15 @@
   height: 15px;
   border: 2px solid $title-text-color;
   border-radius: 2px;
+  .contract__checkbox:checked + & {
+    background-image: url(../images/check-icon.svg);
+    background-color: $accent-color;
+    border-color: $accent-color;
+    background-size: contain;
+    background-origin: border-box;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .contract__text {
@@ -157,20 +162,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.contract__checkbox {
-  &:checked {
-    .contract__icon {
-      background-image: url(../images/check-icon.svg);
-      background-color: $accent-color;
-      border-color: $accent-color;
-      background-size: contain;
-      background-origin: border-box;
-      transition-duration: 250ms;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-  }
 }
 
 .contract__checkbox {
